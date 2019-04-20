@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map</title>
+
+<h1 align="center"></h1>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+
+        <style type="text/css">
+        html, body { margin: 0; padding: 0; height: 100%; }
+        #map { min-height: 100%; }
+                <style>
+                  /* Optional: adjust the values below to change the appearance of the legend */
+                  .legend {
+                      padding: 6px 8px;
+                      line-height: 18px;
+                      background: rgba(255,255,255,0.9);
+                      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                      border-radius: 5px;
+                  }
+                   /* Optional: adjust the values below to change the appearance of the legend color boxes */
+                   .legend i {
+                      width: 18px;
+                      height: 18px;
+                      float: left;
+                      margin-right: 8px;
+                      opacity: 0.7;
+                  }
+                </style>
+
+<script type="text/javascript" src="data.js"></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+          var map = L.map('map', {
+              center: [36.609271,-45.578521],
+              zoom: 3
+          });
+          L.geoJson(data).addTo(map);
+                   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+           attribution: 'Map data � OpenStreetMap contributors, CC-BY-SA, Imagery � Mapbox',
+           maxZoom: 18,
+           minZoom: 1,
+           id: 'mapbox.satellite',
+           accessToken: 'pk.eyJ1IjoibS1lcm5zdCIsImEiOiJjamxmcm5uangxMDFtM3dwaGhkOHNvenptIn0.uDyJ-MnwnMfM8W49s4qXLQ'
+         }).addTo(map);
+            var wineIcon = L.icon({
+                iconUrl: 'wine.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+	    var plantIcon = L.icon({
+                iconUrl: 'plant.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var beeiconIcon = L.icon({
+                iconUrl: 'beeicon.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var yellowpinIcon = L.icon({
+                iconUrl: 'yellowpin.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+
+            });
+            var marker1 = L.marker([48.834260,2.356637], {icon: plantIcon}).addTo(map);
+            var marker2 = L.marker([48.798463,2.121500], {icon: plantIcon}).addTo(map);
+            var marker3 = L.marker([48.871947, 2.331824], {icon: beeiconIcon}).addTo(map);
+            var marker4 = L.marker([48.852191, 2.370578], {icon: beeiconIcon}).addTo(map);
+            var marker5 = L.marker([48.856461, 2.352572], {icon: beeiconIcon}).addTo(map);
+            var marker6 = L.marker([48.866049, 2.312610], {icon: beeiconIcon}).addTo(map);
+            var marker7 = L.marker([48.831540, 2.299840], {icon: wineIcon}).addTo(map);
+            var marker8 = L.marker([48.835927, 2.381767], {icon: wineIcon}).addTo(map);
+            var marker9 = L.marker([48.871225, 2.340190], {icon: wineIcon}).addTo(map);
+            var marker10 = L.marker([48.888288, 2.340190], {icon: wineIcon}).addTo(map);
+            var marker11 = L.marker([51.474238, -2.579028], {icon: plantIcon}).addTo(map);
+            var marker12 = L.marker([51.540133, -0.152690], {icon: plantIcon}).addTo(map);
+            var marker13 = L.marker([51.579115, -0.124002], {icon: plantIcon}).addTo(map);
+            var marker14 = L.marker([51.538678, -0.130721], {icon: wineIcon}).addTo(map);
+            var marker15 = L.marker([51.430456, -0.157417], {icon: wineIcon}).addTo(map);
+            var marker16 = L.marker([51.538755, -0.124430], {icon: plantIcon}).addTo(map);
+            var marker17 = L.marker([34.447287, -119.829481], {icon: plantIcon}).addTo(map);
+            var marker18 = L.marker([34.008671, -118.241318], {icon: plantIcon}).addTo(map);
+            var marker19 = L.marker([49.266514, -123.150402], {icon: plantIcon}).addTo(map);
+            var marker20 = L.marker([49.279730, -123.129117], {icon: plantIcon}).addTo(map);
+            var marker21 = L.marker([49.281423, -123.087557], {icon: plantIcon}).addTo(map);
+            var marker22 = L.marker([49.886884, -119.472874], {icon: plantIcon}).addTo(map);
+            var marker23 = L.marker([51.060470, -114.072020], {icon: plantIcon}).addTo(map);
+            var marker24 = L.marker([43.119725, -87.981668], {icon: plantIcon}).addTo(map);
+            var marker25 = L.marker([41.8107831,-87.6607898], {icon: plantIcon}).addTo(map);
+	    var marker26 = L.marker([42.3642534,-82.9874086], {icon: plantIcon}).addTo(map);
+            var marker27 = L.marker([21.8399434,-78.7641466], {icon: plantIcon}).addTo(map);
+	    var marker28 = L.marker([23.1573176,-82.2835371], {icon: plantIcon}).addTo(map);
+	    var marker29 = L.marker([22.8438648,-82.9448861], {icon: plantIcon}).addTo(map);
+            var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Community_garden%2C_Montparnasse%2C_Paris_10_January_2017.jpg" alt="Sunwahduck" width="300">';
+            var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Potager_du_Roi.jpg" width="300">';
+            var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Paris_Opera_full_frontal_architecture%2C_May_2009.jpg" width="300">';
+            var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Op%C3%A9ra_Bastille.JPG" width="300">';
+            var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Mairie_4e_arrondissement_Paris_8.jpg" alt="Fourbelly2" width="300">';
+            var pic6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Le_Grand_Palais_depuis_le_pont_Alexandre_III_%C3%A0_Paris.jpg" alt="Overeasy" width="300">';
+            var pic7 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Parc_Georges_Brassens_-_vignes.JPG" alt="Revolution3452" width="300">';
+            var pic8 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/P1290600_Paris_XII_Bercy_vigne_rwk.jpg" width="250">';
+            var pic9 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/P1090131_Paris_XX_parc_de_Belleville_vigne_rwk.JPG" alt="Krungthep" width="300">';
+            var pic10 = '<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Montmartre_Parc_de_la_Turlure_001.JPG" alt="Elhabanero" width="300">';
+	    var pic11 = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Ashley_Hill_allotments_-_geograph.org.uk_-_732346.jpg" alt="Sunwahduck" width="300">';
+            var pic12 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/20090906_Shanghai_4728.jpg" alt="Hellosushi" width="250">';
+            var pic13 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Ecologically_grown_vegetables.jpg" alt="Hopleaf654" width="300">';
+            var pic14 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Amusing_seasonal_addition_at_Alara%2C_Marchmont_Street_-_geograph.org.uk_-_1657768.jpg" width="300">';
+            var pic15 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/All_Saints_Church_-_geograph.org.uk_-_1564591.jpg" alt="Fourbelly2" width="300">';
+            var pic16 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Lewis_Cubitt_Park%2C_Kings_Cross%2C_April_2016.jpg" alt="Sunwahduck" width="300">';
+            var pic17 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Qiaokou%2C_Wuhan%2C_Hubei%2C_China_-_panoramio_%281%29.jpg" alt="Revolution3452" width="300">';
+            var pic18 = '<img src="https://upload.wikimedia.org/wikipedia/commons/d/df/South_Central_Farm_42.jpg" alt="Amistad2" width="300">';
+            var pic19 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/%E8%A5%BF%E6%B2%99%E6%B9%BF%E5%9C%B0%EF%BC%8C%E5%B4%87%E6%98%8E%EF%BC%8C%E4%B8%8A%E6%B5%B7_Chongming%2C_ShangHai_06-04-13_-_panoramio.jpg" alt="Krungthep" width="300">';
+            var pic20 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Vancouver_-_St_Paul%27s_Hospital_pano_01.jpg" alt="Elhabanero" width="300">';
+            var pic21 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Sole_Food_Street_Farms.jpg" alt="Sunwahduck" width="300">';
+            var pic22 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/20090906_Shanghai_4728.jpg" alt="Hellosushi" width="250">';
+            var pic23 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Yangtze_River_in_Badong_County%2C_Hubei%2C_picture11.jpg" alt="Hopleaf654" width="250">';
+            var pic24 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Will_allen_growing_power_milwaukee_wisconsin_usa.jpg" alt="New_York_Pizza_Slices" width="300">';
+            var pic25 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Bubbly_Dynamics_roof_%282547785349%29.jpg" alt="Fourbelly2" width="300">';
+            var pic26 = '<img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Detroit-urbanblight-IMG036.JPG" alt="Elhabanero" width="300">';
+            var pic27 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Ciego_de_%C3%81vila_CF9A0812.jpg" alt="Sunwahduck" width="300">';
+            var pic28 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/AJM_013_Vivero_Alamar.JPG" alt="Hellosushi" width="300">';
+            var pic29 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/LasTerrazas.jpg" alt="Hopleaf654" width="300">';
+            marker1.bindPopup('<p style="color:black; font-weight:bold"> Jardins familaux du boulevard de Hopital - Paris </p> Our first visit to a community garden with our host, Jean Griffault leads us here to a somewhat hidden garden nestled between modest apartment buildings. Today, the garden is still in full use and listed among the database of operational Paris community gardens. </p>' + pic1);
+            marker2.bindPopup('<p style="color:black; font-weight:bold"> Louis XIV Vegetable Garden - Versailles </p> The fruit and vegetable garden of King Louis XIV is still being tended meticulously and billed as a major Versailles tourism attraction. </p>' + pic2);
+            marker3.bindPopup('<p style="color:black; font-weight:bold"> Palais Garnier Opera House <br> 5 bee hives originally installed on roof. 5 more have been added in 2016. </p>' + pic3);
+            marker4.bindPopup('<p style="color:black; font-weight:bold"> Paris Opera de la Bastille <br> Site of rooftop hives. </p>' + pic4);
+            marker5.bindPopup('<p style="color:black; font-weight:bold"> 4th Arrondissement Town Hall <br> Site of rooftop hives. </p>' + pic5);
+            marker6.bindPopup('<p style="color:black; font-weight:bold"> Grand Palais <br> Site of rooftop hives. </p>' + pic6);
+            marker7.bindPopup('<p style="color:black; font-weight:bold"> Parc Georges-Brassens <br> Urban Vineyard </p>' + pic7);
+            marker8.bindPopup('<p style="color:black; font-weight:bold"> Vigne du Parc de Bercy <br> Urban Vineyard </p>' + pic8);
+            marker9.bindPopup('<p style="color:black; font-weight:bold"> Parc de Belleville <br> Urban Vineyard </p>' + pic9);
+            marker10.bindPopup('<p style="color:black; font-weight:bold"> Vigne du Close Montmartre </p>' + pic10);
+            marker11.bindPopup('<p style="color:black; font-weight:bold"> St. Werburghs City Farm/Ashley Vale Allotments - Bristol - England </p> The city farm welcomes over 60,000 visitors annually with entertainment, educational activities for everyone, as well as a cafe that serves organic fare. The surrounding allottments are available for use, as well as simply to tour. </p>' + pic11);
+            marker12.bindPopup('<p style="color:black; font-weight:bold"> Vertical Veg - Mark Ridsdill Smith Apartment - London - Approximate location. </p> The founder of Vertical Veg, Mark no longer lives in the apartment where he started the urban balcony garden, but continues to lead the Vertical Veg movement, promoting urban agriculture and Edible Container Gardening. </p>');
+            marker13.bindPopup('<p style="color:black; font-weight:bold"> Thorntons Budgens of Crouch End - CLOSED </p> Known for eclectic food offerings such as squirrel meat, and a lush rooftop garden, the business has closed and the building now hosts a food co-op. </p>' + pic13);
+            marker14.bindPopup('<p style="color:black; font-weight:bold"> Alara Wholefoods/Vineyard </p> After establishing a vineyard in back of an industrial park, there seems to be no evidence of the vineyards from current imagery as the land is being developed and luxury apartments being built nearby. </p>' + pic14);
+            marker15.bindPopup('<p style="color:black; font-weight:bold"> Urban Wine Company - All Saints Church </p> Still going strong turning community-grown grapes into wine sourced from an unlikely place! </p>' + pic15);
+            marker16.bindPopup('<p style="color:black; font-weight:bold"> Skip Garden - Kings Cross </p> As the neighborhood is rapidly being developed, the Skip Garden program is still an oasis of urban agriculture that moves locations as needed, but continues to provide green space and education opportunities for young people to learn about gardening and cultivation. </p>' + pic16);
+            marker17.bindPopup('<p style="color:black; font-weight:bold"> Fairview Gardens Farm - Goleta </p> This is still a working farm that allows for educational workshops and food production');
+            marker18.bindPopup('<p style="color:black; font-weight:bold"> South Central Farm - Los Angeles </p> After many years of controversy between the city of Los Angeles and urban farmers, the site is still under threat of development. The original farm was relocated to a rural area, and a food co-op at the edge of the site sells the produce from this farm. As of now, the site remains an empty lot. </p>' + pic18);
+            marker19.bindPopup('<p style="color:black; font-weight:bold"> City Farmer - Vancouver </p> Still going after 40 years, demonstrating and encouraging participation in urban gardening and composting. </p>');
+            marker20.bindPopup('<p style="color:black; font-weight:bold"> St. Paul Hospital Rooftop Garden and Davey Village Community Garden - Vancouver </p> It is unclear how active the rooftop garden is today and how accessible it is to the public, however community gardens such as the adjacent Davey Village Garden are going strong! </p>' + pic20);
+            marker21.bindPopup('<p style="color:black; font-weight:bold"> SOLEfood Street Farm - Original Site </p> The purpose of the SOLEfood project to turn vacant urban land into productive urban agriculture space has been extremely successful, turning them into the largest urban farm project in North America. They provide opportunities to those with addiction and mental health challenges. </p>' + pic21);
+            marker22.bindPopup('<p style="color:black; font-weight:bold"> Green City Acres - British Columbia </p> The founder, John Curtis Stone, as of 2016 was still offering seminars on how to farm in an urban environment profitably. </p>');
+            marker23.bindPopup('<p style="color:black; font-weight:bold"> Hillhurst-Sunnyside Community Garden - Calgary - CLOSED </p>');
+            marker24.bindPopup('<p style="color:black; font-weight:bold"> Growing Power - Milwaukee </p> Due to complex in-fighting amongst members of the initiative, as well as operating at an enormous defecit, the project ultimately dissolved in 2017. Despite this, the legacy of Will Allen to better his community is still universally recognized. </p>' + pic24);
+            marker25.bindPopup('<p style="color:black; font-weight:bold"> The Plant - Chicago </p> We, as a class, witnessed with our own eyes the flourishing potential of this amazing project begun by John Edel (pictured). </p>' + pic25);
+            marker26.bindPopup('<p style="color:black; font-weight:bold"> Hantz Farms - Detroit </p> As of 2018, the project has planted over 25,000 trees on previosuly-vacant lots in Detroit. There has been controversy recently amid rumors the organization may be looking to sell vacant lots to developers. </p>' + pic26);
+            marker27.bindPopup('<p style="color:black; font-weight:bold"> El Rabanito - Ciego de Avila - Cuba </p> CLOSED </p>' + pic27);
+            marker28.bindPopup('<p style="color:black; font-weight:bold"> Vivero Alamar - Havana - Cuba </p> This remains one of the most productive organoponico urban farms in Cuba. </p>' + pic28);
+            marker29.bindPopup('<p style="color:black; font-weight:bold"> Tito Nunez - Las Terrazas - Cuba </p> CLOSED </p>' + pic29);
+        </script>
+
+   </body>
+</html>
